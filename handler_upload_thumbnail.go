@@ -56,9 +56,9 @@ func (cfg *apiConfig) handlerUploadThumbnail(w http.ResponseWriter, r *http.Requ
 		respondWithError(w, http.StatusBadRequest, "Invalid file type", nil)
 		return
 	}
-	
+
 	// Gather assetPath for data file
-	assetPath := getAssetPath(videoID, mediaType)
+	assetPath := getAssetPath(mediaType)
 	assetDiskPath := cfg.getAssetDiskPath(assetPath)
 
 	// Create file on server
